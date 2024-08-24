@@ -38,6 +38,14 @@ class Board {
     }
   }
 
+  void movePiece(Cell fromCell, Cell toCell) {
+    if (fromCell.occupied && fromCell.getFigure() != null) {
+      final figure = fromCell.getFigure();
+      toCell.setFigure(figure!);
+      // fromCell.removeFigure();
+    }
+  }
+
   void pushFigureLoLost(Figure lostFigure) {
     if (lostFigure.isBlack) {
       blackLost.push(lostFigure);
